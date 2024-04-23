@@ -5,7 +5,7 @@ import Upcoming from '../components/Upcoming'
 import Previous from '../components/Previous'
 import Recording from '../components/Recording'
 import PersonalRoom from '../components/PersonalRoom'
-import Home from '../components/Home'
+import Home from '../components/Home/Home'
 
 
 const route = createBrowserRouter([{
