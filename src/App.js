@@ -4,14 +4,16 @@ import { SignIn, SignInButton, SignedIn, SignedOut } from "@clerk/clerk-react";
 
 function App() {
   return (
-    <>
-      <SignedOut>
-        <SignInButton/>
-      </SignedOut>
-      <SignedIn>
-        <RouterProvider router={route} />
-      </SignedIn>
-    </>
+      <>
+        <SignedOut>
+          <SignInButton/>
+        </SignedOut>
+
+        <SignedIn>
+          <RouterProvider router={route} />
+        </SignedIn>
+      </>
+     
   )
 }
 

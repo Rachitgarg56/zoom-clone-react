@@ -6,6 +6,7 @@ import Previous from '../components/Previous'
 import Recording from '../components/Recording'
 import PersonalRoom from '../components/PersonalRoom'
 import Home from '../components/Home/Home'
+import NewMeeting from '../components/NewMeeting'
 
 
 const route = createBrowserRouter([{
@@ -33,6 +34,9 @@ const route = createBrowserRouter([{
             element:<PersonalRoom/>
         }
     ]
+},{
+    path:'/meeting',
+    element:<NewMeeting/>
 }])
 
 export default route

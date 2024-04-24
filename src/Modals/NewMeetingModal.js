@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/Close';
+import { useNavigate } from 'react-router-dom';
 
 const style = {
   position: 'absolute',
@@ -29,6 +30,13 @@ export default function NewMeetingModal() {
   openNewMeetingModal = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const navigate = useNavigate();
+
+  const handleStartMeetingClick = () => {
+    handleClose()
+    navigate('/meeting')
+  }
+
   return (
     <div>
       <Modal
@@ -46,7 +54,7 @@ export default function NewMeetingModal() {
             Start an Instant Meeting
           </Typography>
 
-          <button style={{backgroundColor:'#0E78F9'}} className='start-meeting text-white px-4 py-2 rounded-lg'>Start Meeting</button>
+          <button onClick={handleStartMeetingClick} style={{backgroundColor:'#0E78F9'}} className='start-meeting text-white px-4 py-2 rounded-lg'>Start Meeting</button>
         </Box>
       </Modal>
     </div>
@@ -54,3 +62,4 @@ export default function NewMeetingModal() {
 }
 
 export {openNewMeetingModal}
+
