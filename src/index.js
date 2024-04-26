@@ -18,11 +18,11 @@ const PUBLISHABLE_KEY = 'pk_test_c3RlcmxpbmctaWJleC04LmNsZXJrLmFjY291bnRzLmRldiQ
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
       <App />
     </ClerkProvider>
-  </React.StrictMode>
+  // {/* </React.StrictMode> */}
 );
 
 // If you want to start measuring performance in your app, pass a function

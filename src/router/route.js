@@ -35,8 +35,9 @@ const route = createBrowserRouter([{
         }
     ]
 },{
-    path:'/meeting',
+    path:'/meeting/:callId',
     element:<NewMeeting/>
-}])
+},
+])
 
 export default route

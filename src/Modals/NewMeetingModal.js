@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
+import { generateCallId } from '../utils/utils';
 
 const style = {
   position: 'absolute',
@@ -24,6 +25,7 @@ const style = {
 };
 
 let openNewMeetingModal;
+let meetingId;
 
 export default function NewMeetingModal() {
   const [open, setOpen] = React.useState(false);
@@ -34,7 +36,8 @@ export default function NewMeetingModal() {
 
   const handleStartMeetingClick = () => {
     handleClose()
-    navigate('/meeting')
+    meetingId = generateCallId();
+    navigate(`/meeting/${meetingId}`)
   }
 
   return (
@@ -61,5 +64,5 @@ export default function NewMeetingModal() {
   );
 }
 
-export {openNewMeetingModal}
+export {openNewMeetingModal,meetingId}
 
