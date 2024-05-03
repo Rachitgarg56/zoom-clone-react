@@ -2,16 +2,20 @@ import React from 'react'
 // import { v4 as uuidv4 } from 'uuid';
 import { StreamCall, StreamVideo, StreamVideoClient } from '@stream-io/video-react-sdk';
 import { MyUILayout } from './MyUILayout';
-import { meetingId } from '../Modals/NewMeetingModal';
+// import { meetingId } from '../Modals/NewMeetingModal';
+import { useParams } from 'react-router-dom';
 
 
 const NewMeeting = () => {
 
+  
   const apiKey = 'mmhfdzb5evj2'
-  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiWW9kYSIsImlzcyI6Imh0dHBzOi8vcHJvbnRvLmdldHN0cmVhbS5pbyIsInN1YiI6InVzZXIvWW9kYSIsImlhdCI6MTcxMzk0NzE3NSwiZXhwIjoxNzE0NTUxOTgwfQ.JSZf1tRXfa89-2uWkKJvEkekmhQ-PC8IAsQTU6xC-YA'
-  const userId = 'Yoda'
+  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiRGFzaF9SZW5kYXIiLCJpc3MiOiJodHRwczovL3Byb250by5nZXRzdHJlYW0uaW8iLCJzdWIiOiJ1c2VyL0Rhc2hfUmVuZGFyIiwiaWF0IjoxNzE0NjcwMjUwLCJleHAiOjE3MTUyNzUwNTV9.w1GwiRPBralOnxBWSspFyNGWvIVHTDw0AEW-AN8TBi0'
+  const userId = 'Dash_Rendar'
   // const callId = 'kncnHWBHEoI2'//i can define
-  const callId = meetingId;
+  // const callId = copiedCallId !== undefined ? copiedCallId : meetingId;
+  const { callId } = useParams();
+  console.log(callId);
 
   // ** note: token and userid should be matched in some way ,these are from demo credentials
   // use auth users for this in some way

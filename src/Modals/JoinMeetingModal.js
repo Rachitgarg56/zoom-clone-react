@@ -4,9 +4,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
-import { generateCallId } from '../utils/utils';
 import { ZoomContext } from '../App';
-import { getCurrentDate, getCurrentTime } from '../utils/utils'
 
 const style = {
   position: 'absolute',
@@ -26,37 +24,38 @@ const style = {
   border:'none',
 };
 
-// let meetingId;
 
-export default function NewMeetingModal() {
-  const {openNewMeetingModal,setOpenNewMeetingModal,setPreviousMeetings} = React.useContext(ZoomContext);
+export default function JoinMeetingModal() {
+  const {openJoinMeetingModal,setOpenJoinMeetingModal} = React.useContext(ZoomContext);
 
-  const handleClose = () => setOpenNewMeetingModal(false);
+  const inputRef = React.useRef(null);
+
+  const handleClose = () => setOpenJoinMeetingModal(false);
 
   const navigate = useNavigate();
 
-  const addIntoPreviousMeetings = () => {
-
-    const currentDate = getCurrentDate();
-    const currentTime = getCurrentTime();
-
-    setPreviousMeetings((prev) => {
-      return [...prev, {date: currentDate, time: currentTime}]
-    })
+  const isValidInput = () => {
+    const input = inputRef.current.value;
+    if (input !== '') return true
+    return false
   }
+  
+  const handleJoinMeetingClick = async () => {
+    const input = inputRef.current.value;
 
-  const handleStartMeetingClick = () => {
-    handleClose() //close modal
-    const meetingId = generateCallId();
-    navigate(`/meeting/${meetingId}`) //navigate to newMeeting Page
+    if (isValidInput()) {
+      navigate(`/meeting/${input}`)
+      handleClose()
+    } else {
+      alert('Incorrect meeting link')
+    }
 
-    addIntoPreviousMeetings()
   }
 
   return (
     <div>
       <Modal
-        open={openNewMeetingModal}
+        open={openJoinMeetingModal}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
@@ -67,15 +66,15 @@ export default function NewMeetingModal() {
           </button>
           
           <Typography className='text-center' id="modal-modal-title" variant="h6" component="h2">
-            Start an Instant Meeting
+            Paste Meeting Link
           </Typography>
 
-          <button onClick={handleStartMeetingClick} style={{backgroundColor:'#0E78F9'}} className='start-meeting text-white px-4 py-2 rounded-lg'>Start Meeting</button>
+          <input ref={inputRef} type='text' placeholder='Meeting Link...' className='meeting-link-input text-black px-4 py-2 rounded-lg' />
+
+          <button onClick={handleJoinMeetingClick} style={{backgroundColor:'#0E78F9'}} className='start-meeting text-white px-4 py-2 rounded-lg'>Join Meeting</button>
         </Box>
       </Modal>
     </div>
   );
 }
-
-// export {meetingId}
 

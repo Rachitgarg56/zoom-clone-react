@@ -1,11 +1,16 @@
 import React from 'react'
-import { openNewMeetingModal } from '../../Modals/NewMeetingModal'
+import { ZoomContext } from '../../App'
 
 const HomeCard = ( { img, title, description, bgColor, id } ) => {
 
-    const handleClick = () => {
-        if (id === 1) openNewMeetingModal()
-    }
+  const {setOpenScheduleMeetingModal,setOpenNewMeetingModal,setOpenJoinMeetingModal} = React.useContext(ZoomContext); 
+
+  const handleClick = () => {
+      if (id === 1) setOpenNewMeetingModal(true)
+      if (id === 2) setOpenJoinMeetingModal(true)
+      if (id === 3) setOpenScheduleMeetingModal(true)
+  }
+
 
   return (
     <div className={`px-4 py-6 flex flex-col justify-between w-full xl:max-w-[270px] min-h-[260px] rounded-[14px] cursor-pointer`}

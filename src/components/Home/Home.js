@@ -2,6 +2,8 @@ import HomeHeader from "./HomeHeader"
 import { homeCardsData } from "../../assets/constants"
 import HomeCard from "./HomeCard"
 import NewMeetingModal from "../../Modals/NewMeetingModal"
+import JoinMeetingModal from "../../Modals/JoinMeetingModal"
+import ScheduleMeetingModal from "../../Modals/ScheduleMeetingModal"
 
 const Home = () => {
 
@@ -21,6 +23,10 @@ const Home = () => {
       </div>
 
       <NewMeetingModal/>
+
+      <JoinMeetingModal/>
+
+      <ScheduleMeetingModal/>
       
     </section>
   )

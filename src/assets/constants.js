@@ -9,6 +9,13 @@ import joinMeetingIcon from './icons/join-meeting.svg';
 import scheduleIcon from './icons/schedule.svg';
 import recordingsIcon from './icons/recordings.svg';
 
+import avatar1 from './images/avatar-1.jpeg';
+import avatar2 from './images/avatar-2.jpeg';
+import avatar3 from './images/avatar-3.png';
+import avatar4 from './images/avatar-4.png';
+import avatar5 from './images/avatar-5.png';
+
+
 export const sidebarItems = [{id: 1,image: <Home/>,name: 'Home',path: '/'},
                             {id: 2,image: <Upcoming/>,name: 'Upcoming',path: '/upcoming'},
                             {id: 3,image: <Previous/>,name: 'Previous',path: '/previous'},
@@ -45,4 +52,5 @@ export const homeCardsData = [
         bgColor: '#F9A90E',
     }
 ];
-                            
+      
+export const avatarImages = [avatar1,avatar2,avatar3,avatar4,avatar5]

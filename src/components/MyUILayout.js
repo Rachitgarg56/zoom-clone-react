@@ -1,14 +1,16 @@
 import { CallControls, CallingState, SpeakerLayout, StreamTheme, useCallStateHooks } from '@stream-io/video-react-sdk';
 
 import '@stream-io/video-react-sdk/dist/css/styles.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 // import { MyParticipantList } from './MyParticipantList';
 // import { MyFloatingLocalParticipant } from './MyFloatingLocalParticipant';
-import { meetingId } from '../Modals/NewMeetingModal';
+// import { meetingId } from '../Modals/NewMeetingModal';
 import { IoCopyOutline } from "react-icons/io5";
 
 
 export const MyUILayout = () => {
+
+    const {callId} = useParams();
 
     const navigate = useNavigate();
 
@@ -25,10 +27,10 @@ export const MyUILayout = () => {
         <div className='absolute top-4 right-12 flex flex-col items-center'> 
           <div className='flex items-center gap-2'>
             <IoCopyOutline className='cursor-pointer' onClick={()=>{
-              navigator.clipboard.writeText(meetingId)
+              navigator.clipboard.writeText(callId)
               alert('meeting-link copied')
             }}/>
-            <p>{meetingId}</p>
+            <p>{callId}</p>
           </div>
           <p>meeting-link</p>
         </div>
