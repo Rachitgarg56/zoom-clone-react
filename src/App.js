@@ -26,7 +26,8 @@ function App() {
   useEffect(() => {
     if (buttonRendered) {
       const btn = document.getElementById("sign-in-button");
-      if (btn !== null) btn.click();
+      // if (btn !== null) btn.click();
+      btn.click();
     }
   }, [buttonRendered]);
 
