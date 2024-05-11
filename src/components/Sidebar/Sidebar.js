@@ -6,9 +6,9 @@ import './Sidebar.css'
 const Sidebar = () => {
 
   return (
-    <aside className="sidebar h-full p-2 w-56 pt-8" style={{backgroundColor:'#1c1f2e'}}>
+    <aside className="sidebar fixed h-full px-6 hidden sm:block w-24 lg:w-72 pt-6" style={{backgroundColor:'#1c1f2e'}}>
 
-      <ul className='flex flex-col gap-1' style={{color:"#c9ddff"}}>
+      <ul className='flex flex-col gap-4' style={{color:"#c9ddff"}}>
 
         {
           sidebarItems.map((tab) => {
@@ -16,7 +16,7 @@ const Sidebar = () => {
               <NavLink to={tab.path}>
                 <li className='flex items-center gap-4 p-3 rounded-lg cursor-pointer hover:bg-blue-400 hover:text-white' key={tab.id} >
                   <figure className='w-6 h-6 flex items-center justify-center'>{tab.image}</figure>
-                  <p>{tab.name}</p>
+                  <p className='hidden font-bold text-lg lg:block'>{tab.name}</p>
                 </li>
               </NavLink>
             )

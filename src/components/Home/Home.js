@@ -8,11 +8,11 @@ import ScheduleMeetingModal from "../../Modals/ScheduleMeetingModal"
 const Home = () => {
 
   return (
-    <section className="flex w-full h-full flex-col gap-5 text-white" style={{border:'1px solid white'}}>
+    <section className="flex w-full h-full pt-6 flex-col gap-5 text-white">
 
       <HomeHeader/>
 
-      <div className="flex gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-between gap-4">
         {
           homeCardsData.map((card)=>{
             return(

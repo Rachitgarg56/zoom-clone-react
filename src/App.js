@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 import route from "./router/route";
 import { SignIn, SignInButton, SignedIn, SignedOut } from "@clerk/clerk-react";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const ZoomContext = createContext();
 
@@ -13,10 +13,27 @@ function App() {
   const [previousMeetings, setPreviousMeetings] = useState([])
   const [upcomingMeetings, setUpcomingMeetings] = useState([])
 
+  const [buttonRendered, setButtonRendered] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setButtonRendered(true);
+    }, 100); 
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    if (buttonRendered) {
+      const btn = document.getElementById("sign-in-button");
+      if (btn !== null) btn.click();
+    }
+  }, [buttonRendered]);
+
   return (
       <ZoomContext.Provider value={{openNewMeetingModal,setOpenNewMeetingModal,openJoinMeetingModal,setOpenJoinMeetingModal,previousMeetings,setPreviousMeetings,openScheduleMeetingModal,setOpenScheduleMeetingModal,upcomingMeetings,setUpcomingMeetings}}>
         <SignedOut>
-          <SignInButton/>
+          <SignInButton id="sign-in-button" />
         </SignedOut>
 
         <SignedIn>
