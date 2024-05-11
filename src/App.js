@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setButtonRendered(true);
-    }, 100); 
+    }, 2000); 
 
     return () => clearTimeout(timeout);
   }, []);
@@ -26,8 +26,8 @@ function App() {
   useEffect(() => {
     if (buttonRendered) {
       const btn = document.getElementById("sign-in-button");
-      // if (btn !== null) btn.click();
-      btn.click();
+      if (btn !== null) btn.click();
+      // btn.click();
     }
   }, [buttonRendered]);
 
