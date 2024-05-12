@@ -12,6 +12,7 @@ function App() {
   const [openScheduleMeetingModal,setOpenScheduleMeetingModal] = useState(false)
   const [previousMeetings, setPreviousMeetings] = useState([])
   const [upcomingMeetings, setUpcomingMeetings] = useState([])
+  const [isSideDialog, setIsSideDialog] = useState(false)
 
   const [buttonRendered, setButtonRendered] = useState(false);
 
@@ -32,7 +33,7 @@ function App() {
   }, [buttonRendered]);
 
   return (
-      <ZoomContext.Provider value={{openNewMeetingModal,setOpenNewMeetingModal,openJoinMeetingModal,setOpenJoinMeetingModal,previousMeetings,setPreviousMeetings,openScheduleMeetingModal,setOpenScheduleMeetingModal,upcomingMeetings,setUpcomingMeetings}}>
+      <ZoomContext.Provider value={{openNewMeetingModal,setOpenNewMeetingModal,openJoinMeetingModal,setOpenJoinMeetingModal,previousMeetings,setPreviousMeetings,openScheduleMeetingModal,setOpenScheduleMeetingModal,upcomingMeetings,setUpcomingMeetings,isSideDialog,setIsSideDialog}}>
         <SignedOut>
           <SignInButton id="sign-in-button" />
         </SignedOut>
