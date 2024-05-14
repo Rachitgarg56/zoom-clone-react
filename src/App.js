@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setButtonRendered(true);
-    }, 2000); 
+    }, 3000); 
 
     return () => clearTimeout(timeout);
   }, []);
