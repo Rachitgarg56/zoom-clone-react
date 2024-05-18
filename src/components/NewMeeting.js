@@ -12,7 +12,7 @@ const NewMeeting = () => {
   const userId = 'Jango_Fett'
   // const callId = 'kncnHWBHEoI2'//i can define
   // const callId = copiedCallId !== undefined ? copiedCallId : meetingId;
-  const { callId } = useParams();
+  const { callId } = useParams(); 
   console.log(callId);
 
   // ** note: token and userid should be matched in some way ,these are from demo credentials
