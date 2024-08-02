@@ -8,8 +8,8 @@ const NewMeeting = () => {
 
   
   const apiKey = 'mmhfdzb5evj2'
-  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiQ2FsbGlzdGFfTWluZyIsImlzcyI6Imh0dHBzOi8vcHJvbnRvLmdldHN0cmVhbS5pbyIsInN1YiI6InVzZXIvQ2FsbGlzdGFfTWluZyIsImlhdCI6MTcyMjI1OTM5NSwiZXhwIjoxNzIyODY0MjAwfQ.gAz71dFaRNEiOJJ7bLt2UALnJEH6-ODarG8-qkvW3og'
-  const userId = 'Callista_Ming'
+  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiUHJpbmNlX1hpem9yIiwiaXNzIjoiaHR0cHM6Ly9wcm9udG8uZ2V0c3RyZWFtLmlvIiwic3ViIjoidXNlci9QcmluY2VfWGl6b3IiLCJpYXQiOjE3MjI1ODM2ODAsImV4cCI6MTcyMzE4ODQ4NX0.yAANyunLxHWdGKA-05dvxvjAxTg69aCpywAZytSkHTw'
+  const userId = 'Prince_Xizor'
   // const callId = 'kncnHWBHEoI2'//i can define
   // const callId = copiedCallId !== undefined ? copiedCallId : meetingId;
   const { callId } = useParams(); 
